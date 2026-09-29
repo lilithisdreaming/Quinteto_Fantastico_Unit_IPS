@@ -5,9 +5,13 @@
 lista = []
 
 while True:
-    print("Fila atual: ", lista)
-    comando = input("\n SISTEMA DE ATENDIMENTO  \n 1 - Adicionar uma pessoa \n" \
-    " 2 - Chamar o proximo \n 3 - Encerrar o sistema \n Qual opção deseja? ")
+    try:
+        print("Fila atual: ", lista)
+        comando = str(input("\n SISTEMA DE ATENDIMENTO  \n 1 - Adicionar uma pessoa \n" \
+        " 2 - Chamar o proximo \n 3 - Encerrar o sistema \n Qual opção deseja? "))
+    except ValueError:
+        print("Nome inválido, tente novamente.")
+        continue # Para voltar para o inicio do loop caso de um Erro, assim nao perdendo o sistema
     if comando == ("1"):
         for i in range(int(input("Digite a quantidade de pessoas que voce quer adicionar: "))):
          print("Fila atual: ", lista)
