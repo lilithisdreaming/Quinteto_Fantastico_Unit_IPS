@@ -1,5 +1,6 @@
 # Transformador de horas para minutos e para segundos
 # Minutos equivale a horas x 60, e segundos equivale a minutos x 60
+# Comandos obrigatorios utilizados: print(), input()
 
 horas = float(input("Digite um valor em horas: "))
 minutos = horas *60
