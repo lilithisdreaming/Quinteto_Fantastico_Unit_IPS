@@ -4,6 +4,7 @@
 # Inclui tratamento de erros com try/except para evitar falhas em entradas inválidas.
 
 lista = []
+LIMITE = 15 # Limite MAX de pessoas que podem ser adicionadas por vez à fila.
 
 # Loop principal que mantém o sistema funcionando.
 while True:
@@ -20,14 +21,18 @@ while True:
         print("=================================\n Nome inválido, tente novamente.\n=================================")
         continue
         
-    if comando == ("1"):   # Adiciona pessoas à fila.
+    if comando == "1":  # Adiciona pessoas à fila
         try:
-            for i in range(int(input("Digite a quantidade de pessoas que voce quer adicionar: "))):
-                print("Fila atual: ", lista)
-                lista.append(input("Ola seja bem vindo, digite seu nome: "))
+            quantidade = int(input(f"Digite a quantidade de pessoas (máx {LIMITE}): "))
+            if quantidade > LIMITE:
+                print(f"Você só pode adicionar até {LIMITE} pessoas por vez.")
+                continue
+            for i in range(quantidade):
+                nome = input("Digite o nome: ")
+                lista.append(nome)
         except ValueError:
-            print("=================================\n Comando invalido, tente novamente.\n================================= ")  
-            continue  
+            print("Entrada inválida, tente novamente.")
+            continue
             
     elif comando == ("2"):   # Chama o primeiro da fila.
         try:
