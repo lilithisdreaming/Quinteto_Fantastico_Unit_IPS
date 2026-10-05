@@ -1,5 +1,5 @@
-#Verificador de Multiplos, informa se X numero é multiplo de 3 e de 5, de 3, de 5 ou de nenhum
-#Comandos obrigatorios utilizados: input(), if, elif, else, print()
+# Programa que verifica se um número inteiro é múltiplo de 3, de 5, de ambos ou de nenhum.
+# Utiliza estruturas condicionais (if, elif, else) e entrada de dados com input().
 
 numero =int(input("Insira um número inteiro: "))
 if numero % 3 == 0 and numero % 5 == 0:
